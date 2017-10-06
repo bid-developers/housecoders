@@ -1,0 +1,33 @@
+
+    <ion-navbar color="ct">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title stacked>Buy a Brick</ion-title>
+    </ion-navbar>
+
+
+<ion-content>
+<!--    <ion-fab  top right #fab>
+    <button ion-fab color="googlegreen">
+        <ion-icon name="menu"></ion-icon></button>
+    <ion-fab-list side="middle">
+        <button ion-fab color="googlered" (click)="ratings()">
+        <ion-icon name="medal"></ion-icon></button>
+    </ion-fab-list>
+    </ion-fab>-->
+
+
+
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>
+<ion-tabs color="ct">
+    <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="megaphone"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Fund me" tabIcon="send"></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="Redeem" tabIcon="briefcase"></ion-tab>
+    <ion-tab [root]="tab4Root" tabTitle="Buy" tabIcon="medal"></ion-tab>
+
+    <!--    <ion-tab [root]="tab4Root" [tabBadge]="counter"  tabBadgeStyle="danger" tabTitle="Prayer Line" tabIcon="chatboxes"></ion-tab>
+        <ion-tab [root]="tab5Root" tabTitle="About" tabIcon="information-circle"></ion-tab>-->
+
+</ion-tabs>
+</ion-content>

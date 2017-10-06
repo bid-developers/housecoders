@@ -1,0 +1,17 @@
+page-tabs {
+
+  .tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+    color: red;
+  }
+
+  .background {
+    background-image: url('../../assets/img/smalllogo.png');
+    background-repeat: no-repeat;
+    -webkit-background-size: 80%;
+    -moz-background-size: 80%;
+    background-size: 80%;
+    height: 100%;
+    position: absolute;
+    background-position: center;
+  }
+}
