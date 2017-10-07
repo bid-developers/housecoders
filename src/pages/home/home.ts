@@ -47,13 +47,13 @@ ionViewDidLoad(){
 
         title: {
 
-            text: 'Fruit Consumption'
+            text: 'Group Fund'
 
         },
 
         xAxis: {
 
-            categories: ['Apples', 'Bananas', 'Oranges']
+            categories: ['Anna', 'Leticia', 'Benson']
 
         },
 
@@ -61,7 +61,7 @@ ionViewDidLoad(){
 
             title: {
 
-                text: 'Fruit eaten'
+                text: 'Contributions'
 
             }
 
@@ -69,17 +69,19 @@ ionViewDidLoad(){
 
         series: [{
 
-            name: 'Jane',
+            name: 'Money',
 
             data: [1, 0, 4]
 
         }, {
 
-            name: 'John',
+            name: 'Material',
 
             data: [5, 7, 3]
 
-        }]
+        },
+            {name: 'Services',
+            data: [2, 1, 2]}]
 
     });
 }
