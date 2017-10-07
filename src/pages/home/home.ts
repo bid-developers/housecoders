@@ -8,7 +8,9 @@ import * as HighCharts from 'highcharts';
 })
 
 
+
 export class HomePage {
+    myCharts:any;
 //@Input()
         //chartOptions:any;
   constructor(public navCtrl: NavController) {}
@@ -38,52 +40,31 @@ export class HomePage {
   }*/
 ionViewDidLoad(){
     var myChart = HighCharts.chart('container', {
-
         chart: {
-
             type: 'bar'
-
         },
-
         title: {
-
             text: 'Group Fund'
-
         },
-
         xAxis: {
-
             categories: ['Anna', 'Leticia', 'Benson']
-
         },
-
         yAxis: {
-
             title: {
-
                 text: 'Contributions'
-
             }
-
         },
-
         series: [{
-
             name: 'Money',
-
-            data: [1, 0, 4]
-
+            data: [1, 9, 4]
         }, {
-
             name: 'Material',
-
             data: [5, 7, 3]
-
         },
-            {name: 'Services',
-            data: [2, 1, 2]}]
-
+           {name: 'Services',
+           data: [2, 1, 2]}]
     });
+    this.myCharts = myChart;
 }
-
+    
 }

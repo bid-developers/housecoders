@@ -11,8 +11,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { ChartModule } from 'angular2-highcharts';
-import * as highcharts from 'Highcharts';
+//import { ChartModule } from 'angular2-highcharts';
+//import * as highcharts from 'Highcharts';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireModule}from 'angularfire2';
@@ -36,7 +36,7 @@ import{AngularFireAuthModule} from 'angularfire2/auth';
   ],
   imports: [
     BrowserModule,AngularFireModule.initializeApp(config),AngularFireDatabaseModule,AngularFireAuthModule,
-    IonicModule.forRoot(MyApp),ChartModule.forRoot(highcharts)
+    IonicModule.forRoot(MyApp)//,ChartModule.forRoot(highcharts)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -47,6 +47,7 @@ import{AngularFireAuthModule} from 'angularfire2/auth';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FirebaseProvider,
     FirebaseProvider
   ]
 })
