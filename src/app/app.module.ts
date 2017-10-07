@@ -11,6 +11,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ChartModule } from 'angular2-highcharts';
+import * as highcharts from 'Highcharts';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp),ChartModule.forRoot(highcharts)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
