@@ -6,9 +6,9 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Contribute Your Money</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Contribute Your Money</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
@@ -18,11 +18,11 @@
         <ion-item>
             <ion-label>Currency</ion-label>
             <ion-select [(ngModel)]="currency">
-            <ion-option value="NAD">NAD</ion-option>
-            <ion-option value="ZAR">ZAR</ion-option>
-            <ion-option value="USD">USD</ion-option>
-            <ion-option value="GBP">GBP</ion-option>
-            <ion-option value="RMB">RMB</ion-option>
+                <ion-option value="NAD">NAD</ion-option>
+                <ion-option value="ZAR">ZAR</ion-option>
+                <ion-option value="USD">USD</ion-option>
+                <ion-option value="GBP">GBP</ion-option>
+                <ion-option value="RMB">RMB</ion-option>
             </ion-select>
         </ion-item>
     </ion-list>
@@ -35,12 +35,17 @@
             </ion-item>
 
         </ion-list>
-
-        <button ion-button color="primary" full rounded  (click)="bluewallet(currency,amount)"
-        [disabled]="!currency || !amount">Blue Wallet</button>
-        <button ion-button color="primary"  full rounded  (click)="paypal(currency,amount)"
-        [disabled]="!currency || !amount">Use PayPal</button>
-        <button ion-button color="secondary"  full rounded   (click)="cardscan(currency,amount)"
-        [disabled]="!currency || !amount">Scan Your Card</button>
+        <ion-fab bottom center middle>
+            <button ion-fab color="primary">Pay</button>
+            <ion-fab-list side="left">
+                <button ion-fab color="white" full rounded (click)="bluewallet(currency,amount)" [disabled]="!currency || !amount"><img src="assets/img/bw.png"/></button>
+            </ion-fab-list>
+            <ion-fab-list side="right">
+                <button ion-fab color="white" full rounded (click)="paypal(currency,amount)" [disabled]="!currency || !amount"><img src="assets/img/ppal.png"/></button>
+            </ion-fab-list>
+            <ion-fab-list side="bottom">
+                <button ion-fab color="primary" full rounded (click)="scan(currency,amount)" [disabled]="!currency || !amount"><img src="assets/img/card.png"/></button>
+            </ion-fab-list>
+        </ion-fab>
     </div>
 </ion-content>

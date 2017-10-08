@@ -15,53 +15,70 @@
 
 <ion-content padding>
 
+  <ion-item>
+    <ion-label>Select Dealer</ion-label>
+    <ion-select [(ngModel)]="os" submitText="Select" cancelText="Cancel">
+      <ion-option value="dos">Shoprite</ion-option>
+      <ion-option value="lunix">Checkers</ion-option>
+      <ion-option value="mac7">Pick n Pay</ion-option>
+      <ion-option value="mac8">KFC</ion-option>
+      <ion-option value="win3.1">Build it</ion-option>
+      <ion-option value="win95">Hungry Lion</ion-option>
+      <ion-option value="win98">C.H.I</ion-option>
+    </ion-select>
+  </ion-item>
+  <BR>
+  <ion-list>
     <ion-item>
-        <ion-label>Select Dealer</ion-label>
-        <ion-select [(ngModel)]="os" submitText="Select" cancelText="Cancel">
-          <ion-option value="dos">Shoprite</ion-option>
-          <ion-option value="lunix">Checkers</ion-option>
-          <ion-option value="mac7">Pick n Pay</ion-option>
-          <ion-option value="mac8">KFC</ion-option>
-          <ion-option value="win3.1">Build it</ion-option>
-          <ion-option value="win95">Hungry Lion</ion-option>
-          <ion-option value="win98">C.H.I</ion-option>
-        </ion-select>
+      <ion-label>Currency</ion-label>
+      <ion-select [(ngModel)]="currency">
+        <ion-option value="NAD">NAD</ion-option>
+        <ion-option value="ZAR">ZAR</ion-option>
+        <ion-option value="USD">USD</ion-option>
+        <ion-option value="GBP">GBP</ion-option>
+        <ion-option value="RMB">RMB</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full (click)="Qrscan()">Scan Qr code</button>
+  <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <ion-card *ngIf="scanCodeData">
+          <ion-card-header>
+            Output
+          </ion-card-header>
+          <ion-card-content>
+            <p>Text : {{scanCodeData.text}}</p>
+            <p>Format : {{scanCodeData.format}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div id="container">
+    <ion-list>
+       <ion-item id="rounded">
+        <ion-label floating>Amount:</ion-label>
+        <ion-input type="number" [(ngModel)]="amount" value=""></ion-input>
       </ion-item>
+    </ion-list>
+    </div>     
 
-<BR>
-
-  
-         <button ion-button full (click)="Qrscan()">Scan Qr code</button>
-                                    <br>
-             <ion-grid>
-               <ion-row>
-                 <ion-col col-12>
-                   <ion-card *ngIf="scanCodeData">
-                       <ion-card-header>
-                         Output
-                       </ion-card-header>
-                      </ion-card>
-                      </ion-col>
-                    </ion-row>
-                  </ion-grid>
-                                <br>
-  
-                                <br>
-  
-    
-  </ion-content>
-  <br>
-  <br>
-  <br>
-  <ion-fab center middle>
+<ion-fab right middle>
     <button ion-fab color="primary">Pay</button>
     <ion-fab-list side="left">
-        <button ion-fab color="light"><img src="assets/img/bw.png"/></button>
-      </ion-fab-list>
-      <ion-fab-list side="right">
-          <button ion-fab color="white"><img src="assets/img/ppal.png"/></button>
-        </ion-fab-list>
-        <ion-fab-list side="bottom">
-            <button ion-fab color="white" (click)="scan()"><img src="assets/img/card.png"/></button>
-          </ion-fab-list>
+      <button ion-fab color="white" (click)="bluewallet(currency,amount)" [disabled]="!currency || !amount"><img src="assets/img/bw.png"/></button>
+    </ion-fab-list>
+    <ion-fab-list side="top">
+      <button ion-fab color="white" (click)="paypal(currency,amount)" [disabled]="!currency || !amount"><img src="assets/img/ppal.png"/></button>
+    </ion-fab-list>
+    <ion-fab-list side="bottom">
+      <button ion-fab color="white" (click)="scan(currency,amount)" [disabled]="!currency || !amount"><img src="assets/img/card.png"/></button>
+    </ion-fab-list>
   </ion-fab>
+
+</ion-content>
