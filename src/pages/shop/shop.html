@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>shop</ion-title>
+    <ion-title>Shop</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -45,7 +45,7 @@
                     </ion-row>
                   </ion-grid>
                                 <br>
-  <button ion-button full (click)="scan()">Card number scan</button>
+  
                                 <br>
   
     
@@ -53,7 +53,7 @@
   <br>
   <br>
   <br>
-  <ion-fab  center middle>
+  <ion-fab center middle>
     <button ion-fab color="primary">Pay</button>
     <ion-fab-list side="left">
         <button ion-fab color="light">USSD</button>
@@ -61,4 +61,7 @@
       <ion-fab-list side="right">
           <button ion-fab color="dark">Paypal</button>
         </ion-fab-list>
+        <ion-fab-list side="bottom">
+            <button ion-fab color="dark" (click)="scan()">Card</button>
+          </ion-fab-list>
   </ion-fab>
