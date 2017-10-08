@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { CardIO } from '@ionic-native/card-io';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -48,6 +50,8 @@ import { MonetaryPage} from '../pages/monetary/monetary';
   ],
   providers: [
     StatusBar,
+    CardIO,
+    BarcodeScanner,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     FirebaseProvider,

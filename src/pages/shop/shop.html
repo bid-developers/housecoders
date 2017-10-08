@@ -14,5 +14,31 @@
 
 
 <ion-content padding>
-
-</ion-content>
+  
+         <button ion-button full (click)="Qrscan()">Scan Qr code</button>
+                                    <br>
+             <ion-grid>
+               <ion-row>
+                 <ion-col col-12>
+                   <ion-card *ngIf="scanCodeData">
+                       <ion-card-header>
+                         Output
+                       </ion-card-header>
+                      </ion-card>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                                <br>
+  <button ion-button full (click)="scan()">Card number scan</button>
+                                <br>
+  
+    
+  </ion-content>
+  <ion-fab left bottom>
+    <button ion-fab color="primary">Pay</button>
+    <ion-fab-list side="right">
+      <button ion-fab>USSD</button>
+      <button ion-fab>payPal</button>
+    
+    </ion-fab-list>
+  </ion-fab>
