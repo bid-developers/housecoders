@@ -14,5 +14,43 @@
 
 
 <ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label>Currency</ion-label>
+            <ion-select [(ngModel)]="currency">
+            <ion-option value="NAD">NAD</ion-option>
+            <ion-option value="ZAR">ZAR</ion-option>
+            <ion-option value="USD">USD</ion-option>
+            <ion-option value="GBP">GBP</ion-option>
+            <ion-option value="RMB">RMB</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <div id="container">
 
+        <ion-list>
+            <ion-item>
+                <ion-label>Start Date</ion-label>
+                <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="dateStarts"></ion-datetime>
+            </ion-item>
+
+
+            <ion-item>
+                <ion-label>Start Time</ion-label>
+                <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStarts"></ion-datetime>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Ends</ion-label>
+                <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="timeEnds"></ion-datetime>
+            </ion-item>
+        </ion-list>
+
+        <button ion-button color="primary" full rounded  (click)="bluewallet(currency,dateStarts,timeStarts,timeEnds)"
+        [disabled]="!currency || !amount">Blue Wallet</button>
+        <button ion-button color="primary"  full rounded  (click)="paypal(currency,dateStarts,timeStarts,timeEnds)"
+        [disabled]="!currency || !amount">Use PayPal</button>
+        <button ion-button color="secondary"  full rounded   (click)="cardscan(currency,dateStarts,timeStarts,timeEnds)"
+        [disabled]="!currency || !amount">Scan Your Card</button>
+    </div>
 </ion-content>

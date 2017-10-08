@@ -7,7 +7,7 @@ import { FirebaseListObservable,
     AngularFireDatabase
 } from 'angularfire2/database';
 import firebase from 'firebase';
-
+import { LoadingController } from 'ionic-angular';
 
 /**
  * Generated class for the MonetaryPage page.
@@ -29,7 +29,7 @@ export class MonetaryPage {
     timestamp: any;
 
 
-    constructor(db:AngularFireDatabase, public nav:NavController, private alertCtrl:AlertController) {
+    constructor(db:AngularFireDatabase, public nav:NavController, private alertCtrl:AlertController,public loadingCtrl: LoadingController) {
         this.contrib_detail = db.list('/contrib_detail', {
             query: {
                 orderByChild: 'score'
@@ -61,17 +61,41 @@ export class MonetaryPage {
      console.log('Cancel clicked');
      }
      },
-     {
-     text: 'Confirm',
-     handler: data => {
-     console.log('Saved clicked');
-     window.localStorage.setItem('amiProfilename', data.displayname);
-         this.contrib_detail.push({ contribution: "Monetary", contribution_name: currency, timestamp: this.timestamp, measure: amount })
-     }
-     }
-     ]
+         {
+             text: 'Confirm',
+             handler: data => {
+                 console.log('Saved clicked');
+                 window.localStorage.setItem('amiProfilename', data.displayname);
+                 this.contrib_detail.push({ contribution: "Monetary", contribution_name: currency, timestamp: this.timestamp, measure: amount })
+                 this.presentLoading();
+             }
+         }
+          ]
      });
         prompt.present();
+
+    }
+
+
+
+    success() {
+
+        let alert = this.alertCtrl.create({
+            title: 'Payment Success',
+            subTitle: 'Thank you for your contribution to the buy a brick campaign, it will go a long way to building a house for someone who really needs it!',
+            buttons: ['OK']
+        });
+
+        alert.present();
+    }
+
+    presentLoading() {
+        let loader = this.loadingCtrl.create({
+            content: "Payment in progress, please wait...",
+            duration: 1500
+        });this.success();
+
+        loader.present();
 
     }
 }
