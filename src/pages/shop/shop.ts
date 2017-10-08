@@ -50,7 +50,7 @@ scan(){
           guideColor: '#12be76',
           hideCardIOLogo: true
         };
-        this.cardIO.scan(options).then((data)=>{
+        this.cardIO.scan(options).then((res:any)=>{
          this.showAlert(res['cardNumber']);
         });
       }
