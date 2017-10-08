@@ -14,6 +14,22 @@
 
 
 <ion-content padding>
+
+    <ion-item>
+        <ion-label>Select Dealer</ion-label>
+        <ion-select [(ngModel)]="os" submitText="Select" cancelText="Cancel">
+          <ion-option value="dos">Shoprite</ion-option>
+          <ion-option value="lunix">Checkers</ion-option>
+          <ion-option value="mac7">Pick n Pay</ion-option>
+          <ion-option value="mac8">KFC</ion-option>
+          <ion-option value="win3.1">Build it</ion-option>
+          <ion-option value="win95">Hungry Lion</ion-option>
+          <ion-option value="win98">C.H.I</ion-option>
+        </ion-select>
+      </ion-item>
+
+<BR>
+
   
          <button ion-button full (click)="Qrscan()">Scan Qr code</button>
                                     <br>
