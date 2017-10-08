@@ -46,6 +46,7 @@ scan(){
           requirePostalCode: false,
           scanInstructions: "Scan the front of your card",
           scanExpiry: true,
+          scanCVV: true,
           scanCardHolderName: true,
           guideColor: '#12be76',
           hideCardIOLogo: true
