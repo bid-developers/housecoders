@@ -66,5 +66,5 @@ ionViewDidLoad(){
     });
     this.myCharts = myChart;
 }
-    
+
 }

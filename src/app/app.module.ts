@@ -9,6 +9,9 @@ import { RedeemPage } from '../pages/redeem/redeem';
 import { ShopPage } from '../pages/shop/shop';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { MaterialPage} from '../pages/material/material';
+import { ServicesPage} from '../pages/services/services';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 //import { ChartModule } from 'angular2-highcharts';
@@ -18,7 +21,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireModule}from 'angularfire2';
 import{AngularFireAuthModule} from 'angularfire2/auth';
 
-
+import { MonetaryPage} from '../pages/monetary/monetary';
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyASvO9CFmFVlQdZahOCAsmectq0ygO8NXU",
@@ -32,7 +35,7 @@ import{AngularFireAuthModule} from 'angularfire2/auth';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,FundmePage,RedeemPage,ShopPage,TabsPage
+    HomePage,FundmePage,RedeemPage,ShopPage,TabsPage,MonetaryPage,MaterialPage,ServicesPage
   ],
   imports: [
     BrowserModule,AngularFireModule.initializeApp(config),AngularFireDatabaseModule,AngularFireAuthModule,
@@ -41,7 +44,7 @@ import{AngularFireAuthModule} from 'angularfire2/auth';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,FundmePage,RedeemPage,ShopPage,TabsPage
+    HomePage,FundmePage,RedeemPage,ShopPage,TabsPage,MonetaryPage,MaterialPage,ServicesPage
   ],
   providers: [
     StatusBar,

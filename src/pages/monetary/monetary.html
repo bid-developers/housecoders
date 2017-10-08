@@ -1,0 +1,46 @@
+<!--
+  Generated template for the MonetaryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Contribute Your Money</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label>Currency</ion-label>
+            <ion-select [(ngModel)]="currency">
+            <ion-option value="NAD">NAD</ion-option>
+            <ion-option value="ZAR">ZAR</ion-option>
+            <ion-option value="USD">USD</ion-option>
+            <ion-option value="GBP">GBP</ion-option>
+            <ion-option value="RMB">RMB</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <div id="container">
+        <ion-list>
+
+            <ion-item id="rounded">
+                <ion-label floating>Amount:</ion-label>
+                <ion-input type="number" [(ngModel)]="amount" value=""></ion-input>
+            </ion-item>
+
+        </ion-list>
+
+        <button ion-button color="primary" full rounded  (click)="bluewallet(currency,amount)"
+        [disabled]="!currency || !amount">Blue Wallet</button>
+        <button ion-button color="primary"  full rounded  (click)="paypal(currency,amount)"
+        [disabled]="!currency || !amount">Use PayPal</button>
+        <button ion-button color="secondary"  full rounded   (click)="cardscan(currency,amount)"
+        [disabled]="!currency || !amount">Scan Your Card</button>
+    </div>
+</ion-content>

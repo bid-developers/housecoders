@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
-
+import { MonetaryPage} from '../monetary/monetary';
+import { MaterialPage} from '../material/material';
+import { ServicesPage} from '../services/services';
 /**
  * Generated class for the FundmePage page.
  *
@@ -21,5 +23,17 @@ export class FundmePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FundmePage');
   }
+
+    monetary(){
+        this.navCtrl.push(MonetaryPage);
+    }
+
+    material(){
+        this.navCtrl.push(MaterialPage);
+    }
+
+    services(){
+        this.navCtrl.push(ServicesPage);
+    }
 
 }

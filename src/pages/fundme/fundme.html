@@ -7,12 +7,49 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>fundme</ion-title>
+    <ion-title>Fund me</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-card (click)="monetary()">
+        <img src="assets/img/monetary.jpg"/>
+        <ion-card-content>
+            <ion-card-title>
+                Monetary Value
+            </ion-card-title>
+            <p>
+                This sections enables you to contribute monetary value to the buy a brick campaign. All major currencies are accepted.
+                            </p><h3><ion-icon name="finger-print"></ion-icon> Tap here to contribute</h3>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="material()">
+        <img src="assets/img/material.jpg"/>
+        <ion-card-content>
+            <ion-card-title>
+                Material
+            </ion-card-title>
+            <p>
+                You can also contribute material you may have left over from you previous projects.
+                An evaluator will assess your material contribution at an appointed time and give you the corresponding points.
+            </p><h3><ion-icon name="finger-print"></ion-icon> Tap here to contribute</h3>
+        </ion-card-content>
+    </ion-card>
+
+
+    <ion-card  (click)="services()">
+        <img src="assets/img/services.jpg"/>
+        <ion-card-content>
+            <ion-card-title>
+                Services
+            </ion-card-title>
+            <p>
+                You can also contribute the services for which you are trained for. An evaluator will assess the services you would like to offer at an appointed time and give you the corresponding points.
+            </p><h3><ion-icon name="finger-print"></ion-icon> Tap here to contribute</h3>
+        </ion-card-content>
+    </ion-card>
 
 </ion-content>
