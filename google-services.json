@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1035526976218",
+    "firebase_url": "https://housecoders-d9cf8.firebaseio.com",
+    "project_id": "housecoders-d9cf8",
+    "storage_bucket": "housecoders-d9cf8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035526976218:android:a0f212e75c6cf5aa",
+        "android_client_info": {
+          "package_name": "com.housecoders.nam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035526976218-ssrn3a9i68eoi29h4980fflgjbf516iv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGBlz7JwFjg0fFgwIHTfSVXcQqIjnkIcs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

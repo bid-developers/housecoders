@@ -7,6 +7,9 @@
 <ion-header>
 
   <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
     <ion-title>Shop</ion-title>
   </ion-navbar>
 
@@ -14,33 +17,7 @@
 
 
 <ion-content padding>
-
-  <ion-item>
-    <ion-label>Select Dealer</ion-label>
-    <ion-select [(ngModel)]="os" submitText="Select" cancelText="Cancel">
-      <ion-option value="dos">Shoprite</ion-option>
-      <ion-option value="lunix">Checkers</ion-option>
-      <ion-option value="mac7">Pick n Pay</ion-option>
-      <ion-option value="mac8">KFC</ion-option>
-      <ion-option value="win3.1">Build it</ion-option>
-      <ion-option value="win95">Hungry Lion</ion-option>
-      <ion-option value="win98">C.H.I</ion-option>
-    </ion-select>
-  </ion-item>
-  <BR>
-  <ion-list>
-    <ion-item>
-      <ion-label>Currency</ion-label>
-      <ion-select [(ngModel)]="currency">
-        <ion-option value="NAD">NAD</ion-option>
-        <ion-option value="ZAR">ZAR</ion-option>
-        <ion-option value="USD">USD</ion-option>
-        <ion-option value="GBP">GBP</ion-option>
-        <ion-option value="RMB">RMB</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
-
+    <img class="img" src="assets/img/retail_qr_code.jpg"/>
   <button ion-button full (click)="Qrscan()">Scan Qr code</button>
   <br>
   <ion-grid>
@@ -59,25 +36,27 @@
     </ion-row>
   </ion-grid>
 
-  <div id="container">
-    <ion-list>
-       <ion-item id="rounded">
-        <ion-label floating>Amount:</ion-label>
-        <ion-input type="number" [(ngModel)]="amount" value=""></ion-input>
-      </ion-item>
-    </ion-list>
-    </div>     
+    <ion-grid class="transp" padding top>
+        <ion-row>
+            <ion-col padding left>
+                <!--     <button class="fulltransp" (tap)="ami()"><img src="assets/img/AMIButton.png"/></button>
+                --> </ion-col>
+            <ion-col padding>
+                <!--       <button class="fulltransp" (tap)="amitv()"><img src="assets/img/AMITVButton.png"/></button>
+             -->      </ion-col>
+        </ion-row>
+    </ion-grid>
 
-<ion-fab right middle>
-    <button ion-fab color="primary">Pay</button>
+<ion-fab bottom center>
+    <button ion-fab color="danger">Pay</button>
     <ion-fab-list side="left">
-      <button ion-fab color="white" (click)="bluewallet(currency,amount)" [disabled]="!currency || !amount"><img src="assets/img/bw.png"/></button>
+      <button ion-fab color="white" (click)="bluewallet(currency,amount)"><img src="assets/img/bw.png"/></button>
     </ion-fab-list>
     <ion-fab-list side="top">
-      <button ion-fab color="white" (click)="paypal(currency,amount)" [disabled]="!currency || !amount"><img src="assets/img/ppal.png"/></button>
+      <button ion-fab color="white" (click)="paypal(currency,amount)"><img src="assets/img/ppal.png"/></button>
     </ion-fab-list>
-    <ion-fab-list side="bottom">
-      <button ion-fab color="white" (click)="scan(currency,amount)" [disabled]="!currency || !amount"><img src="assets/img/card.png"/></button>
+    <ion-fab-list side="right">
+      <button ion-fab color="white" (click)="scan(currency,amount)"><img src="assets/img/card.png"/></button>
     </ion-fab-list>
   </ion-fab>
 

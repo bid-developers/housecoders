@@ -11,60 +11,69 @@ import * as HighCharts from 'highcharts';
 
 export class HomePage {
     myCharts:any;
-//@Input()
-        //chartOptions:any;
+    myCharts2:any;
+    myCharts3:any;
+    chart:any;
+
   constructor(public navCtrl: NavController) {}
-      /*this.chartOptions = {
-    chart: {
-        type: 'bar'
-    },
-    title: {
-        text: 'Fruit Consumption'
-    },
-    xAxis: {
-        categories: ['Apples', 'Bananas', 'Oranges']
-    },
-    yAxis: {
-        title: {
-            text: 'Fruit eaten'
-        }
-    },
-    series: [{
-        name: 'Jane',
-        data: [1, 0, 4]
-    }, {
-        name: 'John',
-        data: [5, 7, 3]
-    }]
-}
-  }*/
-ionViewDidLoad(){
-    var myChart = HighCharts.chart('container', {
+
+ionViewDidLoad() {
+
+     var myChart = HighCharts.chart('container', {
         chart: {
-            type: 'bar'
+            type: 'column'
         },
         title: {
-            text: 'Group Fund'
+            text: 'HouseCoders Group Fund Member Performance'
         },
         xAxis: {
-            categories: ['Anna', 'Leticia', 'Benson']
+            categories: ['Anna', 'Leticia', 'Benson', 'Tangeni']
         },
         yAxis: {
             title: {
                 text: 'Contributions'
             }
         },
-        series: [{
-            name: 'Money',
-            data: [1, 9, 4]
-        }, {
-            name: 'Material',
-            data: [5, 7, 3]
-        },
-           {name: 'Services',
-           data: [2, 1, 2]}]
+        series: [
+            {
+                name: 'Money',
+                data: [1, 9, 4, 2]
+            },
+            {
+                name: 'Material',
+                data: [5, 7, 3, 8]
+            },
+            {name: 'Services',
+                data: [2, 1, 2, 6]}
+        ]
     });
     this.myCharts = myChart;
+
+ var myCharts2 =    HighCharts.chart('container2', {
+         chart: {
+      type: 'pie'
+      },
+      title: {
+      text: 'HouseCoders Group Fund'
+      },
+      xAxis: {
+      categories: ['Anna', 'Leticia', 'Benson', 'Tangeni']
+      },
+      yAxis: {
+      title: {
+      text: 'Contributions'
+      }
+      },
+      series: [
+      {
+      name: 'Money',
+            data: [1, 9, 4, 2]
+      }
+      ]
+      });
+
+
+    this.myCharts2 = myCharts2;
 }
 
 }

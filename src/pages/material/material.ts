@@ -45,14 +45,14 @@ export class MaterialPage {    items:FirebaseListObservable<any[]>;
 
         let prompt = this.alertCtrl.create({
             title: 'Are you sure you want to proceed',
-            message: "You are about to pay "+currency+" "+ amount + " to the buy a brick Campaign using your blue wallet",
-            inputs: [
+            message: "You are about to donate "+ amount + " "+currency+" to the buy a brick Campaign",
+/*            inputs: [
                 {
                     name: 'displayname',
                     placeholder: 'Enter Blue Wallet PIN'
                 }
 
-            ],
+            ],*/
             buttons: [
                 {
                     text: 'Cancel',

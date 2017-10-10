@@ -10,6 +10,10 @@ import { FundmePage } from '../pages/fundme/fundme';
 import { RedeemPage } from '../pages/redeem/redeem';
 import { ShopPage } from '../pages/shop/shop';
 import { TabsPage } from '../pages/tabs/tabs';
+import { LoginPage } from '../pages/login/login';
+import { LogoutPage } from '../pages/logout/logout';
+import { SignupPage } from '../pages/signup/signup';
+import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 
 import { MaterialPage} from '../pages/material/material';
 import { ServicesPage} from '../pages/services/services';
@@ -22,8 +26,9 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireModule}from 'angularfire2';
 import{AngularFireAuthModule} from 'angularfire2/auth';
-
+import { AuthProvider } from '../providers/auth/auth';
 import { MonetaryPage} from '../pages/monetary/monetary';
+import { Facebook } from '@ionic-native/facebook'
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyASvO9CFmFVlQdZahOCAsmectq0ygO8NXU",
@@ -37,7 +42,7 @@ import { MonetaryPage} from '../pages/monetary/monetary';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,FundmePage,RedeemPage,ShopPage,TabsPage,MonetaryPage,MaterialPage,ServicesPage
+    HomePage,FundmePage,RedeemPage,ShopPage,TabsPage,MonetaryPage,MaterialPage,ServicesPage,ResetPasswordPage,LoginPage, SignupPage,LogoutPage
   ],
   imports: [
     BrowserModule,AngularFireModule.initializeApp(config),AngularFireDatabaseModule,AngularFireAuthModule,
@@ -46,16 +51,16 @@ import { MonetaryPage} from '../pages/monetary/monetary';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,FundmePage,RedeemPage,ShopPage,TabsPage,MonetaryPage,MaterialPage,ServicesPage
+    HomePage,FundmePage,RedeemPage,ShopPage,TabsPage,MonetaryPage,MaterialPage,ServicesPage,ResetPasswordPage,LoginPage, SignupPage,LogoutPage
   ],
   providers: [
     StatusBar,
     CardIO,
-    BarcodeScanner,
+    BarcodeScanner,Facebook,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     FirebaseProvider,
-    FirebaseProvider
+      AuthProvider
   ]
 })
 export class AppModule {}

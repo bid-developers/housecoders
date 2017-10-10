@@ -8,9 +8,6 @@
 
 <ion-slides autoplay="3000" loop="true" speed="1000">
     <ion-slide>
-        <img class="img" src="assets/img/nbhf_slide1.jpg"/>
-    </ion-slide>
-    <ion-slide>
         <img class="img" src={{item.advertURL}}/>
     </ion-slide>
     <ion-slide >
@@ -22,27 +19,64 @@
     <ion-slide >
         <img class="img" src={{item.advertURL3}}/>
     </ion-slide>
+
     <ion-slide >
         <img class="img" src={{item.advertURL4}}/>
     </ion-slide>
+
     <ion-slide >
         <img class="img" src={{item.advertURL5}}/>
+    </ion-slide>
+
+    <ion-slide >
+        <img class="img" src={{item.advertURL6}}/>
     </ion-slide>
 </ion-slides>
 </ion-header>
 
 
 <ion-content padding>
-    <div id="container">
-        <ion-list>
+    <ion-grid class="transp" padding top>
+        <ion-row>
+            <ion-col padding left>
+                <!--     <button class="fulltransp" (tap)="ami()"><img src="assets/img/AMIButton.png"/></button>
+                --> </ion-col>
+            <ion-col padding>
+                <!--       <button class="fulltransp" (tap)="amitv()"><img src="assets/img/AMITVButton.png"/></button>
+             -->      </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col padding left>
+                <!--     <button class="fulltransp" (tap)="ami()"><img src="assets/img/AMIButton.png"/></button>
+                --> </ion-col>
+            <ion-col padding>
+                <!--       <button class="fulltransp" (tap)="amitv()"><img src="assets/img/AMITVButton.png"/></button>
+             -->      </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col padding left>
+                <!--     <button class="fulltransp" (tap)="ami()"><img src="assets/img/AMIButton.png"/></button>
+                --> </ion-col>
+            <ion-col padding>
+                <!--       <button class="fulltransp" (tap)="amitv()"><img src="assets/img/AMITVButton.png"/></button>
+             -->      </ion-col>
+        </ion-row>
+</ion-grid>
+
+    <ion-item ><h1 color="blue">Redeem Points</h1></ion-item>
+    <ion-item  text-wrap><h4 color="blue">Points are redeemed from participating stores</h4></ion-item>
+    <ion-item  text-wrap><h5 color="blue">Point code is at the bottom of your receipt</h5></ion-item>
+
+    <ion-list position="center">
 
             <ion-item id="rounded">
-                <ion-label floating>Point Code</ion-label>
-                <ion-input type="number" value=""></ion-input>
+                <ion-label floating>Enter Your Point Code:</ion-label>
+                <ion-input type="number"  [(ngModel)]="amount" value=""></ion-input>
             </ion-item>
 
         </ion-list>
 
-        <button ion-button color="secondary" outline>Redeem</button>
-    </div>
-</ion-content>
+        <button ion-button color="secondary" full (click)="bluewallet(amount)">Redeem</button>
+    </ion-content>

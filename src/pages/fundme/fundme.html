@@ -7,7 +7,11 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Fund me</ion-title>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Fund me</ion-title><ion-icon style="float: right;" (click)="takeAction(account.$key)" name="md-more">
+      </ion-icon>
   </ion-navbar>
 
 </ion-header>

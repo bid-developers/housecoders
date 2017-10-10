@@ -39,21 +39,14 @@ export class ServicesPage {    items:FirebaseListObservable<any[]>;
         //       console.log(this.items)
     }
 
-    bluewallet(currency, amount) {
+    bluewallet(currency, dateStarts, timeStarts, timeEnds ) {
 
 
 
         let prompt = this.alertCtrl.create({
             title: 'Are you sure you want to proceed',
-            message: "You are about to pay "+currency+" "+ amount + " to the buy a brick Campaign using your blue wallet",
-            inputs: [
-                {
-                    name: 'displayname',
-                    placeholder: 'Enter Blue Wallet PIN'
-                }
-
-            ],
-            buttons: [
+            message: "You are about to donate "+currency+" services from "+ dateStarts + " to "+ timeEnds +" to the buy a brick Campaign using your blue wallet",
+                        buttons: [
                 {
                     text: 'Cancel',
                     handler: data => {
@@ -65,7 +58,7 @@ export class ServicesPage {    items:FirebaseListObservable<any[]>;
                     handler: data => {
                         console.log('Saved clicked');
                         window.localStorage.setItem('amiProfilename', data.displayname);
-                        this.contrib_detail.push({ contribution: "Monetary", contribution_name: currency, timestamp: this.timestamp, measure: amount })
+                        this.contrib_detail.push({ contribution: "Services", contribution_name: currency, timestamp: this.timestamp, dateStarts: dateStarts, timeEnds:timeEnds })
                     }
                 }
             ]

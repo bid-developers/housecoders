@@ -16,13 +16,13 @@
 <ion-content padding>
     <ion-list>
         <ion-item>
-            <ion-label>Currency</ion-label>
+            <ion-label>Material To contribute</ion-label>
             <ion-select [(ngModel)]="currency">
-            <ion-option value="NAD">NAD</ion-option>
-            <ion-option value="ZAR">ZAR</ion-option>
-            <ion-option value="USD">USD</ion-option>
-            <ion-option value="GBP">GBP</ion-option>
-            <ion-option value="RMB">RMB</ion-option>
+            <ion-option value="bricks">Bricks</ion-option>
+            <ion-option value="bag(s) of cement">Cement</ion-option>
+            <ion-option value="box(es) of tiles">Tiles</ion-option>
+            <ion-option value="door(s)">Doors</ion-option>
+            <ion-option value="window frame(s)">Window Frames</ion-option>
             </ion-select>
         </ion-item>
     </ion-list>
@@ -30,7 +30,7 @@
         <ion-list>
 
             <ion-item id="rounded">
-                <ion-label floating>Amount:</ion-label>
+                <ion-label floating>Quantity:</ion-label>
                 <ion-input type="number" [(ngModel)]="amount" value=""></ion-input>
             </ion-item>
 
